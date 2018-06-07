@@ -1,27 +1,31 @@
-## Laravel PHP Framework
+# Tutorial Laravel
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Pasos
+ - Instalar composer
+ - iniciar proyecto , desde 0 (composer create-project laravel/laravel {nombre} "5.1.*") | Importar este proyecto si es alumno la rama de tuto
+ - COlocar la rama tuto en el servidor apache
+ - Teniendo colocado se debe de realizar la actualizacion de dependencias (composer update)
+ - COnfigurar el entorno .env -> cambiar clave si es necesaraio generar una key
+ - Ingresar a la bd con el nombre seleccionado y crearla en mysql
+ - Crear las migraciones php artisan make:migration create_movies_table --create=movies
+ - Genrar la migracion php artisan migrate
+ - Generar modelo php artisan make:model Movie
+ - Crear Controlador php artisan make:COntroller MovieCOntroller
+ - MOdificar las rutas
+ 
+ ### El servidor se pone a correr con el comando php artisan serve
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+ ## Rutas
+    - traer todas -> http://localhost:8000/movies/
+    - traer por id -> http://localhost:8000/movies/{id}
+    - guardar -> http://localhost:8000/movies/ 
+ ### {"name":"Star Wars: Episode I - The Phantom Menace","duration":133,"genre":"Sci-Fi","earnings":1027044677,"description":""} se debe de enviar en metodo post
+    - actualizar -> http://localhost:8000/movies/{id} = y enviar los campos por actulizar con el nombre como se muestra en el JSON ANTERIOR
+    - para eliminar -> http://localhost:8000/movies/ por post se debe de enviar el id por eliminar
+    - para traer todas las peliculas con ese nombre -> http://localhost:8000/movies/find/{name}
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Mas dudas hasta que me desocupe ya hize lo que tenia que hacer a te dejo unos inserts para que tengas valores para la movies
+INSERT INTO `movies` VALUES (1,'Star Wars.',121,'Sci-Fi',775398007.00,'','2018-06-07 17:07:53','2018-06-07 18:30:04'),(2,'Star Wars: Episode I - The Phantom Menace',133,'Sci-Fi',1027044677.00,'','2018-06-07 17:10:15','2018-06-07 17:10:15'),(3,'Star Wars: Episode II - Attack of the Clones',132,'Sci-Fi',649398328.00,'','2018-06-07 17:12:19','2018-06-07 17:12:19'),(4,'Star Wars: Episode III - Revenge of the Sith',146,'Sci-Fi',848754768.00,'','2018-06-07 17:13:15','2018-06-07 17:13:15'),(5,'Star Wars: The Clone Wars',98,'Sci-Fi',68282844.00,'','2018-06-07 17:14:17','2018-06-07 17:14:17'),(6,'Star Wars: The Force Awakens',136,'Sci-Fi',2068223624.00,'','2018-06-07 17:15:21','2018-06-07 17:15:21'),(7,'Rogue One: A Star Wars Story',133,'Sci-Fi',1056057273.00,'','2018-06-07 17:16:17','2018-06-07 17:16:17'),(8,'Star Wars: The Last Jedi',151,'Sci-Fi',1332539889.00,'','2018-06-07 17:17:13','2018-06-07 17:17:13'),(9,'Solo: A Star Wars Story',135,'Sci-Fi',271339084.00,'','2018-06-07 17:18:08','2018-06-07 17:18:08');
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+## Atentamente
+### RowerPulido | RowerDev | Jorge Pulido
